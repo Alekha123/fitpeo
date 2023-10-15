@@ -6,9 +6,16 @@ function App() {
   return (
     <>
       {/*<> //React Fragment */}
-      <Sidebar />
-      <Header />
-      <Body />
+      <div className="flex">
+        <div className="w-[15%]">
+          <Sidebar />
+        </div>
+
+        <div className="w-[85%]">
+          <Header />
+          <Body />
+        </div>
+      </div>
     </>
   );
 }
