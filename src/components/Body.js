@@ -9,6 +9,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
+import { FaSistrix } from "react-icons/fa6";
 
 ChartJS.register(
   CategoryScale,
@@ -25,7 +26,7 @@ const option = {
     legend: { position: "chartArea" },
     title: {
       display: true,
-      text: "Modular Bar Chart",
+      text: "Overview ",
     },
   },
 };
@@ -48,8 +49,8 @@ const data = {
   datasets: [
     {
       label: "Product A",
-      data: [20, 30, 40, 50, 60, 70, 20, 30, 40, 50, 60, 70],
-      backgroundColor: "blue",
+      data: [50, 30, 80, 60, 70, 20, 60, 90, 75, 50, 40, 60],
+      backgroundColor: ["blue"],
     },
   ],
 };
@@ -61,6 +62,9 @@ const Body = () => {
         <div className=" flex justify-between mx-auto ">
           {cardInfo.map((item) => (
             <div className="w-full m-5 bg-white border-2 " key={item.id}>
+            <div>
+                <img src={item.image} alt='' className='w-full'/>
+            </div>
               <p>{item.title}</p>
               <p>${item.income}</p>
               <p
@@ -76,15 +80,44 @@ const Body = () => {
       </div>
       {/* Chart Bar */}
       <div className="flex">
-        <div className="w-[80%]">
+        <div className="w-[50%]">
           <Bar options={option} data={data} />
         </div>
 
         <div className="w-[20%]">{/* <Bar options={option} data={data} /> */}</div>
       </div>
+
+     
+     <div className="flex justify-between py-5 bg-slate-100 px-8 mt-7">
+       <div>Product Sell</div>
+       <div className="flex mr-2 ">
+         <div className="relative">
+           <FaSistrix className="inline-flex mr-2 absolute mt-2 ml-2"/> 
+           <input className="border-2 pl-7" type="text" placeholder="search"/>
+          </div>
+         <div className="pl-2">
+           <p>Last 30 days</p>
+          </div>
+       </div>
+       
+     </div>
+
+      <div className="flex justify-between py-5bg-slate-100 px-8 mt-7">
+        <div>Product Name</div>
+        <div className="flex ">
+          <div >Stock</div>
+          <div className="pl-16">Price</div>
+          <div className="pl-16">Total Sales</div>
+        </div>
+      </div>
+
+      
+     
     </>
   );
 };
+
+
 
 export default Body;
 
@@ -92,7 +125,7 @@ const cardInfo = [
   {
     id: 1,
     title: "Earning",
-    image: "",
+    image: "earning.jpg",
     income: "198K",
     monthlyIncome: "37.8",
   },
