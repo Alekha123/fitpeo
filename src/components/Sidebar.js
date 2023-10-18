@@ -2,6 +2,7 @@ import React from "react";
 import { FaHashnode, FaRegMessage, FaUserLarge,} from "react-icons/fa6";
 import { AiFillAppstore, AiFillCodepenCircle,  } from "react-icons/ai";
 import { BiSolidBadgeDollar, BiWalletAlt, } from "react-icons/bi";
+import { FcBusinessman, IconName } from "react-icons/fc";
 
 const Sidebar = () => {
   return (
@@ -19,7 +20,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className="text-white mx-auto mb-8">Evano</div>
+        <div className="text-white mx-auto mb-8"><FcBusinessman className="inline-flex mr-2 rounded"/>Evano</div>
       </div>
     </>
   );
